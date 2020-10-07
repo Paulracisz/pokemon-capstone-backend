@@ -19,6 +19,13 @@ class Pokemon(models.Model):
     # Types
     type_One = models.CharField(max_length = 40)
     type_Two = models.CharField(max_length = 40)
-
+    # Base XP
+    base_experience = models.IntegerField()
+    #Default Pokemon?
+    is_default = models.BooleanField(default = 0)
+    # Leave a comment about your pokemon
+    your_thoughts = models.TextField(blank = True)
+    # Details about this pokemon can be found at:
+    details_at = models.URLField()
 
 # Create your models here.
