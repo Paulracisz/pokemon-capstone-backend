@@ -10,7 +10,6 @@ class PokemonTrainerSerializer(serializers.HyperlinkedModelSerializer):
             'username',
             'password',
             'displayname',
-            'email',
             'bio',
             'pokedexed',
             'poke_ball',

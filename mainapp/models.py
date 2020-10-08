@@ -5,7 +5,7 @@ from django.contrib.auth.models import AbstractUser
     
 class PokemonTrainer(AbstractUser):
     displayname = models.CharField(max_length=80)
-    email = models.EmailField(blank=True, null=True)
+    personal_website = models.URLField(blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
     pokedexed = models.ManyToManyField('Pokemon', related_name="pokemon_indexed", symmetrical=False, blank=True)
     poke_ball = models.IntegerField(default=5)
