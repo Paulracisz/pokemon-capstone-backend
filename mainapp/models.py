@@ -7,12 +7,12 @@ class Pokemon(models.Model):
     front_normal_image = models.CharField(max_length = 100)
     front_shiny_image = models.CharField(max_length = 100)
     # Stats
-    hp = models.IntegerField()
-    attack = models.IntegerField()
-    defense = models.IntegerField()
-    special_attack = models.IntegerField()
-    special_defense = models.IntegerField()
-    speed = models.IntegerField()
+    hp = models.IntegerField(default = 0)
+    attack = models.IntegerField(default = 0)
+    defense = models.IntegerField(default = 0)
+    special_attack = models.IntegerField(default = 0)
+    special_defense = models.IntegerField(default = 0)
+    speed = models.IntegerField(default = 0)
     # Abilities
     ability_One = models.CharField(max_length = 40)
     ability_Two = models.CharField(max_length = 40)
@@ -20,12 +20,6 @@ class Pokemon(models.Model):
     type_One = models.CharField(max_length = 40)
     type_Two = models.CharField(max_length = 40)
     # Base XP
-    base_experience = models.IntegerField()
-    #Default Pokemon?
-    is_default = models.BooleanField(default = 0)
-    # Leave a comment about your pokemon
-    your_thoughts = models.TextField(blank = True)
-    # Details about this pokemon can be found at:
-    details_at = models.URLField()
+    base_experience = models.IntegerField(default = 0)
 
 # Create your models here.
