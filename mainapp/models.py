@@ -15,7 +15,8 @@ class PokemonTrainer(AbstractUser):
     exp = models.IntegerField(default=0)
     currency = models.IntegerField(default=0)
     level = models.IntegerField(default=0)
-    
+
+
 class Pokemon(models.Model):
     # Pokemon Name
     name = models.CharField(max_length = 40)
@@ -39,10 +40,6 @@ class Pokemon(models.Model):
     base_experience = models.IntegerField()
     #Default Pokemon?
     is_default = models.BooleanField(default = 0)
-    # Leave a comment about your pokemon
-    your_thoughts = models.TextField(blank = True)
-    # Details about this pokemon can be found at:
-    details_at = models.URLField()
     
     def __str__(self):
         return self.name
