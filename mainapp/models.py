@@ -1,9 +1,8 @@
 from django.db import models
 
 class Pokemon(models.Model):
-    # Pokemon Name
     name = models.CharField(max_length = 40)
-    # Images
+       # Images
     front_normal_image = models.CharField(max_length = 100)
     front_shiny_image = models.CharField(max_length = 100)
     # Stats
@@ -16,10 +15,9 @@ class Pokemon(models.Model):
     # Abilities
     ability_One = models.CharField(max_length = 40)
     ability_Two = models.CharField(max_length = 40)
+    ability_Three = models.CharField(max_length = 40)
     # Types
     type_One = models.CharField(max_length = 40)
     type_Two = models.CharField(max_length = 40)
     # Base XP
     base_experience = models.IntegerField(default = 0)
-
-# Create your models here.
