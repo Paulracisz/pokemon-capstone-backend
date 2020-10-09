@@ -31,14 +31,9 @@ class Command(BaseCommand):
 
                 Pokemon.objects.create(
                     name=response['name'],
+                    height=response['height'],
+                    weight=response['weight'],
                     front_normal_image=response['sprites']['front_default'],
-                    front_shiny_image=response['sprites']['front_shiny'],
-                    hp=response['stats'][0]['base_stat'],
-                    attack=response['stats'][1]['base_stat'],
-                    defense=response['stats'][2]['base_stat'],
-                    special_attack=response['stats'][3]['base_stat'],
-                    special_defense=response['stats'][4]['base_stat'],
-                    speed=response['stats'][5]['base_stat'],
                     ability_One=response['abilities'][0]['ability']['name'],
                     ability_Two=response['abilities'][1]['ability']['name'],
                     ability_Three=response['abilities'][2]['ability']['name'],
@@ -52,13 +47,8 @@ class Command(BaseCommand):
                 Pokemon.objects.create(
                     name=response['name'],
                     front_normal_image=response['sprites']['front_default'],
-                    front_shiny_image=response['sprites']['front_shiny'],
-                    hp=response['stats'][0]['base_stat'],
-                    attack=response['stats'][1]['base_stat'],
-                    defense=response['stats'][2]['base_stat'],
-                    special_attack=response['stats'][3]['base_stat'],
-                    special_defense=response['stats'][4]['base_stat'],
-                    speed=response['stats'][5]['base_stat'],
+                    height=response['height'],
+                    weight=response['weight'],
                     ability_One=response['abilities'][0]['ability']['name'],
                     ability_Two=response['abilities'][1]['ability']['name'],
                     ability_Three=response['abilities'][2]['ability']['name'],
@@ -71,14 +61,9 @@ class Command(BaseCommand):
 
                 Pokemon.objects.create(
                     name=response['name'],
+                    height=response['height'],
+                    weight=response['weight'],
                     front_normal_image=response['sprites']['front_default'],
-                    front_shiny_image=response['sprites']['front_shiny'],
-                    hp=response['stats'][0]['base_stat'],
-                    attack=response['stats'][1]['base_stat'],
-                    defense=response['stats'][2]['base_stat'],
-                    special_attack=response['stats'][3]['base_stat'],
-                    special_defense=response['stats'][4]['base_stat'],
-                    speed=response['stats'][5]['base_stat'],
                     ability_One=response['abilities'][0]['ability']['name'],
                     ability_Two=response['abilities'][1]['ability']['name'],
                     ability_Three="N/A",
@@ -92,13 +77,8 @@ class Command(BaseCommand):
                 Pokemon.objects.create(
                     name=response['name'],
                     front_normal_image=response['sprites']['front_default'],
-                    front_shiny_image=response['sprites']['front_shiny'],
-                    hp=response['stats'][0]['base_stat'],
-                    attack=response['stats'][1]['base_stat'],
-                    defense=response['stats'][2]['base_stat'],
-                    special_attack=response['stats'][3]['base_stat'],
-                    special_defense=response['stats'][4]['base_stat'],
-                    speed=response['stats'][5]['base_stat'],
+                    height=response['height'],
+                    weight=response['weight'],
                     ability_One=response['abilities'][0]['ability']['name'],
                     ability_Two=response['abilities'][1]['ability']['name'],
                     ability_Three="N/A",
@@ -107,18 +87,13 @@ class Command(BaseCommand):
                     base_experience=response['base_experience']
                 )
 
-            elif len(response['abilities']) == 1 and len(response['types']) == 2: 
+            elif len(response['abilities']) == 1 and len(response['types']) == 2:
 
                 Pokemon.objects.create(
                     name=response['name'],
                     front_normal_image=response['sprites']['front_default'],
-                    front_shiny_image=response['sprites']['front_shiny'],
-                    hp=response['stats'][0]['base_stat'],
-                    attack=response['stats'][1]['base_stat'],
-                    defense=response['stats'][2]['base_stat'],
-                    special_attack=response['stats'][3]['base_stat'],
-                    special_defense=response['stats'][4]['base_stat'],
-                    speed=response['stats'][5]['base_stat'],
+                    height=response['height'],
+                    weight=response['weight'],
                     ability_One=response['abilities'][0]['ability']['name'],
                     ability_Two="N/A",
                     ability_Three="N/A",
@@ -132,13 +107,8 @@ class Command(BaseCommand):
                 Pokemon.objects.create(
                     name=response['name'],
                     front_normal_image=response['sprites']['front_default'],
-                    front_shiny_image=response['sprites']['front_shiny'],
-                    hp=response['stats'][0]['base_stat'],
-                    attack=response['stats'][1]['base_stat'],
-                    defense=response['stats'][2]['base_stat'],
-                    special_attack=response['stats'][3]['base_stat'],
-                    special_defense=response['stats'][4]['base_stat'],
-                    speed=response['stats'][5]['base_stat'],
+                    height=response['height'],
+                    weight=response['weight'],
                     ability_One=response['abilities'][0]['ability']['name'],
                     ability_Two="N/A",
                     ability_Three="N/A",
