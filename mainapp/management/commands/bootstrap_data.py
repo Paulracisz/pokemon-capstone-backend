@@ -30,92 +30,92 @@ class Command(BaseCommand):
             Pokemon.objects.create(
                 name = response['name']
             )
-            # if len(response['abilities']) == 3 and len(response['types']) == 2:
+            if len(response['abilities']) == 3 and len(response['types']) == 2:
 
-            #     Pokemon.objects.create(
-            #         name=response['name'],
-            #         height=response['height'],
-            #         weight=response['weight'],
-            #         front_normal_image=response['sprites']['front_default'],
-            #         ability_One=response['abilities'][0]['ability']['name'],
-            #         ability_Two=response['abilities'][1]['ability']['name'],
-            #         ability_Three=response['abilities'][2]['ability']['name'],
-            #         type_One=response['types'][0]['type']['name'],
-            #         type_Two=response['types'][1]['type']['name'],
-            #         base_experience=response['base_experience']
-            #     )
+                Pokemon.objects.create(
+                    name=response['name'],
+                    height=response['height'],
+                    weight=response['weight'],
+                    front_normal_image=response['sprites']['front_default'],
+                    ability_One=response['abilities'][0]['ability']['name'],
+                    ability_Two=response['abilities'][1]['ability']['name'],
+                    ability_Three=response['abilities'][2]['ability']['name'],
+                    type_One=response['types'][0]['type']['name'],
+                    type_Two=response['types'][1]['type']['name'],
+                    base_experience=response['base_experience']
+                )
 
-            # elif len(response['abilities']) == 3:
+            elif len(response['abilities']) == 3:
 
-            #     Pokemon.objects.create(
-            #         name=response['name'],
-            #         front_normal_image=response['sprites']['front_default'],
-            #         height=response['height'],
-            #         weight=response['weight'],
-            #         ability_One=response['abilities'][0]['ability']['name'],
-            #         ability_Two=response['abilities'][1]['ability']['name'],
-            #         ability_Three=response['abilities'][2]['ability']['name'],
-            #         type_One=response['types'][0]['type']['name'],
-            #         type_Two="N/A",
-            #         base_experience=response['base_experience']
-            #     )
+                Pokemon.objects.create(
+                    name=response['name'],
+                    front_normal_image=response['sprites']['front_default'],
+                    height=response['height'],
+                    weight=response['weight'],
+                    ability_One=response['abilities'][0]['ability']['name'],
+                    ability_Two=response['abilities'][1]['ability']['name'],
+                    ability_Three=response['abilities'][2]['ability']['name'],
+                    type_One=response['types'][0]['type']['name'],
+                    type_Two="N/A",
+                    base_experience=response['base_experience']
+                )
 
-            # elif len(response['abilities']) == 2 and len(response['types']) == 2:
+            elif len(response['abilities']) == 2 and len(response['types']) == 2:
 
-            #     Pokemon.objects.create(
-            #         name=response['name'],
-            #         height=response['height'],
-            #         weight=response['weight'],
-            #         front_normal_image=response['sprites']['front_default'],
-            #         ability_One=response['abilities'][0]['ability']['name'],
-            #         ability_Two=response['abilities'][1]['ability']['name'],
-            #         ability_Three="N/A",
-            #         type_One=response['types'][0]['type']['name'],
-            #         type_Two=response['types'][1]['type']['name'],
-            #         base_experience=response['base_experience']
-            #     )
+                Pokemon.objects.create(
+                    name=response['name'],
+                    height=response['height'],
+                    weight=response['weight'],
+                    front_normal_image=response['sprites']['front_default'],
+                    ability_One=response['abilities'][0]['ability']['name'],
+                    ability_Two=response['abilities'][1]['ability']['name'],
+                    ability_Three="N/A",
+                    type_One=response['types'][0]['type']['name'],
+                    type_Two=response['types'][1]['type']['name'],
+                    base_experience=response['base_experience']
+                )
 
-            # elif len(response['abilities']) == 2:
+            elif len(response['abilities']) == 2:
 
-            #     Pokemon.objects.create(
-            #         name=response['name'],
-            #         front_normal_image=response['sprites']['front_default'],
-            #         height=response['height'],
-            #         weight=response['weight'],
-            #         ability_One=response['abilities'][0]['ability']['name'],
-            #         ability_Two=response['abilities'][1]['ability']['name'],
-            #         ability_Three="N/A",
-            #         type_One=response['types'][0]['type']['name'],
-            #         type_Two="N/A",
-            #         base_experience=response['base_experience']
-            #     )
+                Pokemon.objects.create(
+                    name=response['name'],
+                    front_normal_image=response['sprites']['front_default'],
+                    height=response['height'],
+                    weight=response['weight'],
+                    ability_One=response['abilities'][0]['ability']['name'],
+                    ability_Two=response['abilities'][1]['ability']['name'],
+                    ability_Three="N/A",
+                    type_One=response['types'][0]['type']['name'],
+                    type_Two="N/A",
+                    base_experience=response['base_experience']
+                )
 
-            # elif len(response['abilities']) == 1 and len(response['types']) == 2:
+            elif len(response['abilities']) == 1 and len(response['types']) == 2:
 
-            #     Pokemon.objects.create(
-            #         name=response['name'],
-            #         front_normal_image=response['sprites']['front_default'],
-            #         height=response['height'],
-            #         weight=response['weight'],
-            #         ability_One=response['abilities'][0]['ability']['name'],
-            #         ability_Two="N/A",
-            #         ability_Three="N/A",
-            #         type_One=response['types'][0]['type']['name'],
-            #         type_Two=response['types'][1]['type']['name'],
-            #         base_experience=response['base_experience']
-            #     )
+                Pokemon.objects.create(
+                    name=response['name'],
+                    front_normal_image=response['sprites']['front_default'],
+                    height=response['height'],
+                    weight=response['weight'],
+                    ability_One=response['abilities'][0]['ability']['name'],
+                    ability_Two="N/A",
+                    ability_Three="N/A",
+                    type_One=response['types'][0]['type']['name'],
+                    type_Two=response['types'][1]['type']['name'],
+                    base_experience=response['base_experience']
+                )
 
-            # else:
+            else:
 
-            #     Pokemon.objects.create(
-            #         name=response['name'],
-            #         front_normal_image=response['sprites']['front_default'],
-            #         height=response['height'],
-            #         weight=response['weight'],
-            #         ability_One=response['abilities'][0]['ability']['name'],
-            #         ability_Two="N/A",
-            #         ability_Three="N/A",
-            #         type_One=response['types'][0]['type']['name'],
-            #         type_Two="N/A",
-            #         base_experience=response['base_experience']
-            #     )
+                Pokemon.objects.create(
+                    name=response['name'],
+                    front_normal_image=response['sprites']['front_default'],
+                    height=response['height'],
+                    weight=response['weight'],
+                    ability_One=response['abilities'][0]['ability']['name'],
+                    ability_Two="N/A",
+                    ability_Three="N/A",
+                    type_One=response['types'][0]['type']['name'],
+                    type_Two="N/A",
+                    base_experience=response['base_experience']
+                )
