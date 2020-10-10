@@ -70,6 +70,30 @@ version = "2.6.0"
 
 [[package]]
 category = "main"
+description = "JSON Web Token based authentication for Django REST framework"
+name = "djangorestframework-jwt"
+optional = false
+python-versions = "*"
+version = "1.11.0"
+
+[package.dependencies]
+PyJWT = ">=1.5.2,<2.0.0"
+
+[[package]]
+category = "main"
+description = "JSON Web Token implementation in Python"
+name = "pyjwt"
+optional = false
+python-versions = "*"
+version = "1.7.1"
+
+[package.extras]
+crypto = ["cryptography (>=1.4)"]
+flake8 = ["flake8", "flake8-import-order", "pep8-naming"]
+test = ["pytest (>=4.0.1,<5.0.0)", "pytest-cov (>=2.6.0,<3.0.0)", "pytest-runner (>=4.2,<5.0.0)"]
+
+[[package]]
+category = "main"
 description = "World timezone definitions, modern and historical"
 name = "pytz"
 optional = false
@@ -93,7 +117,11 @@ python-versions = "*"
 version = "0.10.1"
 
 [metadata]
+<<<<<<< HEAD
 content-hash = "37d49aea19a25e394b4fb8a80f6ac4705f8eea5050f209e7db8b767f8939722a"
+=======
+content-hash = "593eef8dbfd1958a8c3701c55027ee6bcdb4aaf9ffbf04ebda65b99eeece65ae"
+>>>>>>> 2129281c81ddbcf729b09525a7ff60ba84d4c68a
 lock-version = "1.0"
 python-versions = "^3.8"
 
@@ -117,9 +145,13 @@ djangorestframework = [
     {file = "djangorestframework-3.12.1-py3-none-any.whl", hash = "sha256:5c5071fcbad6dce16f566d492015c829ddb0df42965d488b878594aabc3aed21"},
     {file = "djangorestframework-3.12.1.tar.gz", hash = "sha256:d54452aedebb4b650254ca092f9f4f5df947cb1de6ab245d817b08b4f4156249"},
 ]
-pycodestyle = [
-    {file = "pycodestyle-2.6.0-py2.py3-none-any.whl", hash = "sha256:2295e7b2f6b5bd100585ebcb1f616591b652db8a741695b3d8f5d28bdc934367"},
-    {file = "pycodestyle-2.6.0.tar.gz", hash = "sha256:c58a7d2815e0e8d7972bf1803331fb0152f867bd89adf8a01dfd55085434192e"},
+djangorestframework-jwt = [
+    {file = "djangorestframework-jwt-1.11.0.tar.gz", hash = "sha256:5efe33032f3a4518a300dc51a51c92145ad95fb6f4b272e5aa24701db67936a7"},
+    {file = "djangorestframework_jwt-1.11.0-py2.py3-none-any.whl", hash = "sha256:ab15dfbbe535eede8e2e53adaf52ef0cf018ee27dbfad10cbc4cbec2ab63d38c"},
+]
+pyjwt = [
+    {file = "PyJWT-1.7.1-py2.py3-none-any.whl", hash = "sha256:5c6eca3c2940464d106b99ba83b00c6add741c9becaec087fb7ccdefea71350e"},
+    {file = "PyJWT-1.7.1.tar.gz", hash = "sha256:8d59a976fb773f3e6a39c85636357c4f0e242707394cadadd9814f5cbaa20e96"},
 ]
 pytz = [
     {file = "pytz-2020.1-py2.py3-none-any.whl", hash = "sha256:a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"},
