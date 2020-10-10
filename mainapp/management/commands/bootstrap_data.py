@@ -27,9 +27,6 @@ class Command(BaseCommand):
         for name in pokemon_names:
             pokemon_stats = f"{specific_pokemon}{name}"
             response = requests.get(pokemon_stats).json()
-            Pokemon.objects.create(
-                name = response['name']
-            )
             if len(response['abilities']) == 3 and len(response['types']) == 2:
 
                 Pokemon.objects.create(
