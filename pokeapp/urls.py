@@ -14,9 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
-from django.urls import path, include
 from rest_framework import routers
-from mainapp.start import views
 from django.contrib import admin
 from django.urls import path, include
 from mainapp import views
@@ -28,6 +26,7 @@ router.register(r'PokemonTrainer', views.PokemonTrainerViewSet)
 router.register(r'Pokemon', views.PokemonViewSet)
 
 urlpatterns = [
+    path('current_trainer/', views.current_trainer),
     path('admin/', admin.site.urls),
     path('token-auth/', obtain_jwt_token),
     path('api/', include(router.urls))
