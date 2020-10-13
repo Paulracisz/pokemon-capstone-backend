@@ -191,5 +191,6 @@ STATIC_URL = '/static/'
 AUTH_USER_MODEL = 'mainapp.PokemonTrainer'
 
 JWT_AUTH = {
-    'JWT_RESPONSE_PAYLOAD_HANDLER': 'pokeapp.utils.my_jwt_response_handler'
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'pokeapp.utils.my_jwt_response_handler',
+    'JWT_VERIFY_EXPIRATION': False,
 }
