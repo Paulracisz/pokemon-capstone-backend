@@ -24,7 +24,7 @@ class PokemonTrainerList(APIView):
 
     permission_classes = (permissions.AllowAny,)
 
-    def post(self, request, format=None):
+    def post(self, request):
         serializer = serializers.PokemonTrainerSerializerWithToken(data=request.data)
         if serializer.is_valid():
             serializer.save()
