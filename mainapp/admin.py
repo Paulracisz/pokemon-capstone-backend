@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mainapp.models import PokemonTrainer, Pokemon
+from mainapp.models import PokemonTrainer, Pokemon, CaughtPokemon
 from django.contrib.auth.admin import UserAdmin
 
 class PokemonTrainerAdmin(UserAdmin):
@@ -28,3 +28,4 @@ class PokemonTrainerAdmin(UserAdmin):
 
 admin.site.register(PokemonTrainer, PokemonTrainerAdmin)
 admin.site.register(Pokemon)
+admin.site.register(CaughtPokemon)

@@ -24,9 +24,11 @@ from rest_framework_jwt.views import obtain_jwt_token
 router = routers.DefaultRouter()
 router.register(r'PokemonTrainer', views.PokemonTrainerViewSet)
 router.register(r'Pokemon', views.PokemonViewSet)
+router.register(r'CaughtPokemon', views.CaughtPokemonViewSet, basename="CaughtPoke")
 
 urlpatterns = [
     path('current_trainer/', views.current_trainer),
+    path('trainers/', views.PokemonTrainerList.as_view()),
     path('admin/', admin.site.urls),
     path('token-auth/', obtain_jwt_token),
     path('api/', include(router.urls))

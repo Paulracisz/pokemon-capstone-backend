@@ -16,6 +16,21 @@ def current_trainer(request):
     serializer = serializers.PokemonTrainerSerializer(request.user)
     return Response(serializer.data)
 
+class PokemonTrainerList(APIView):
+    """
+    Create a new user. It's called 'PokemonTrainerList' because normally we'd have a get
+    method here too, for retrieving a list of all User objects.
+    """
+
+    permission_classes = (permissions.AllowAny,)
+
+    def post(self, request, format=None):
+        serializer = serializers.PokemonTrainerSerializerWithToken(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
 
 class PokemonTrainerViewSet(viewsets.ModelViewSet):
     queryset = models.PokemonTrainer.objects.all()
@@ -24,3 +39,8 @@ class PokemonTrainerViewSet(viewsets.ModelViewSet):
 class PokemonViewSet(viewsets.ModelViewSet):
     queryset = models.Pokemon.objects.all()
     serializer_class = serializers.PokemonSerializer
+    
+    
+class CaughtPokemonViewSet(viewsets.ModelViewSet):
+    queryset = models.CaughtPokemon.objects.all()
+    serializer_class = serializers.CaughtPokemonSerializer

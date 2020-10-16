@@ -4,7 +4,7 @@ from django.contrib.auth.models import AbstractUser
 
 
 class PokemonTrainer(AbstractUser):
-    displayname = models.CharField(max_length=80)
+    displayname = models.CharField(max_length=80, blank=True, null=True)
     personal_website = models.URLField(blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
     pokedexed = models.ManyToManyField(
@@ -36,3 +36,9 @@ class Pokemon(models.Model):
 
     def __str__(self):
         return self.name
+    
+    
+class CaughtPokemon(models.Model):
+    owner = models.ForeignKey(PokemonTrainer, on_delete=models.CASCADE, related_name="poke_trainer")
+    pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="poke")
+    date_caught = models.DateTimeField(default=timezone.now)
