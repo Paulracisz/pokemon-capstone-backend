@@ -56,7 +56,7 @@ class PokemonTrainerSerializerWithToken(serializers.ModelSerializer):
 class PokemonSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Pokemon
-        fields = ['name', 'front_normal_image', 'ability_One', 'ability_Two',
+        fields = ['id', 'name', 'front_normal_image', 'ability_One', 'ability_Two',
                   'ability_Three', 'type_One', 'type_Two', 'base_experience']
         
         
