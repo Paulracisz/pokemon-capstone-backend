@@ -11,7 +11,6 @@ class PokemonTrainerAdmin(UserAdmin):
                 'fields': (
                     'displayname',
                     'bio',
-                    'pokedexed',
                     'poke_ball',
                     'great_ball',
                     'ultra_ball',

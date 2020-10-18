@@ -11,7 +11,6 @@ class PokemonTrainerSerializer(serializers.ModelSerializer):
             'username',
             'displayname',
             'bio',
-            'pokedexed',
             'poke_ball',
             'great_ball',
             'ultra_ball',
@@ -43,7 +42,15 @@ class PokemonTrainerSerializerWithToken(serializers.ModelSerializer):
     
     class Meta:
         model = models.PokemonTrainer
-        fields = ('token', 'username', 'password')
+        fields = [
+            'token', 
+            'username', 
+            'password', 
+            'email_address', 
+            'personal_website', 
+            'displayname', 
+            'bio'
+            ]
 
 
 class PokemonSerializer(serializers.ModelSerializer):
