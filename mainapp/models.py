@@ -2,10 +2,9 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import AbstractUser
 
-
 class PokemonTrainer(AbstractUser):
     displayname = models.CharField(max_length=80, blank=True, null=True)
-    email_address = models.EmailField(blank=True, null=True)
+    email = models.EmailField(max_length=80, blank=True, null=True)
     personal_website = models.URLField(blank=True, null=True)
     bio = models.TextField(blank=True, null=True)
     poke_ball = models.IntegerField(default=5)
