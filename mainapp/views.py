@@ -5,10 +5,12 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from mainapp import serializers, models
+from rest_framework.decorators import action
+from mainapp.models import PokemonTrainer
 
 # Create your views here.
 
-@api_view(['GET'])
+@api_view(['GET', 'PUT'])
 def current_trainer(request):
     """
     Determine the current trainer by their token, and return their data
@@ -24,3 +26,11 @@ class PokemonTrainerViewSet(viewsets.ModelViewSet):
 class PokemonViewSet(viewsets.ModelViewSet):
     queryset = models.Pokemon.objects.all()
     serializer_class = serializers.PokemonSerializer
+    
+
+
+@action(detail=True, methods=['post'])
+def pokeshop_update(self, request, pk=None):
+    user = PokemonTrainer.objects.get(id=request.user.id)
+    # user.currency - finalTotal
+        

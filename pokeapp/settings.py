@@ -45,6 +45,7 @@ CORS_ALLOW_HEADERS = [
     'accept',
     'accept-encoding',
     'authorization',
+    'application/json',
     'content-type',
     'dnt',
     'origin',
