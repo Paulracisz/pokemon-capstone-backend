@@ -20,6 +20,8 @@ class PokemonTrainerSerializer(serializers.ModelSerializer):
             'level'
         ]
         
+
+        
 class PokemonTrainerSerializerWithToken(serializers.ModelSerializer):
     
     token = serializers.SerializerMethodField()
@@ -51,7 +53,7 @@ class PokemonTrainerSerializerWithToken(serializers.ModelSerializer):
             'displayname', 
             'bio'
             ]
-
+        
 
 class PokemonSerializer(serializers.ModelSerializer):
     class Meta:
