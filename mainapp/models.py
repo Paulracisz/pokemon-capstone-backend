@@ -42,5 +42,5 @@ class CaughtPokemon(models.Model):
     pokemon = models.ForeignKey(Pokemon, on_delete=models.CASCADE, related_name="poke")
     date_caught = models.DateTimeField(default=timezone.now)
     
-    def __str__(self):
-        return self.owner
+    # def __str__(self):
+    #     return self.owner

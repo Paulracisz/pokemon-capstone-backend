@@ -9,6 +9,8 @@ class PokemonTrainerSerializer(serializers.ModelSerializer):
         fields = [
             'id',
             'username',
+            'email_address',
+            'personal_website',
             'displayname',
             'bio',
             'poke_ball',

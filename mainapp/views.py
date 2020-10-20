@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import JsonResponse
 from rest_framework import viewsets, permissions, status
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, action
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from mainapp import serializers, models
@@ -36,6 +36,7 @@ class PokemonTrainerViewSet(viewsets.ModelViewSet):
     queryset = models.PokemonTrainer.objects.all()
     serializer_class = serializers.PokemonTrainerSerializer
     
+    
 class PokemonViewSet(viewsets.ModelViewSet):
     queryset = models.Pokemon.objects.all()
     serializer_class = serializers.PokemonSerializer
@@ -44,3 +45,12 @@ class PokemonViewSet(viewsets.ModelViewSet):
 class CaughtPokemonViewSet(viewsets.ModelViewSet):
     queryset = models.CaughtPokemon.objects.all()
     serializer_class = serializers.CaughtPokemonSerializer
+    
+    
+    def get_queryset(self):
+        """
+        This view returns a list of all the caught pokemon 
+        for the currently authenticated user.
+        """
+        user = self.request.user
+        return models.CaughtPokemon.objects.filter(owner=user.id)
